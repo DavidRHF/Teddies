@@ -170,3 +170,40 @@ links.forEach(link => {
         link.classList.add("active");
     }
 });
+
+
+/* ==========================================================
+   CUSTOM CURSOR SYSTEM (PRODUCTION VERSION)
+========================================================== */
+
+const cursor = document.querySelector(".custom-cursor");
+
+if (cursor) {
+
+    // move cursor
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+
+    // hover effects on interactive elements
+    const hoverTargets = document.querySelectorAll(
+        "a, button, .btn, input, textarea, select"
+    );
+
+    hoverTargets.forEach(el => {
+
+        el.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor-hover");
+        });
+
+        el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor-hover");
+        });
+
+    });
+
+}
+
+
+
