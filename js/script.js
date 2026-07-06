@@ -177,37 +177,39 @@ links.forEach(link => {
 ========================================================== */
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const cursor = document.querySelector(".custom-cursor");
 
     if (!cursor) return;
 
-    // follow mouse
     document.addEventListener("mousemove", (e) => {
         cursor.style.left = e.clientX + "px";
         cursor.style.top = e.clientY + "px";
     });
 
-    // helper function
     const setCursor = (emoji) => {
         cursor.textContent = emoji;
     };
 
-    // default
     setCursor("🍯");
 
-    // hover targets + emoji mapping
-    const map = [
+    const hoverMap = [
         { selector: "a", emoji: "🐻" },
         { selector: "button, .btn", emoji: "🍔" },
-        { selector: ".special, .highlight", emoji: "⭐" },
-        { selector: "img", emoji: "👀" }
+        { selector: "input, textarea, select", emoji: "✏️" },
+        { selector: "img", emoji: "👀" },
+        { selector: ".special, .highlight", emoji: "⭐" }
     ];
 
-    map.forEach(item => {
+    hoverMap.forEach(item => {
 
-        document.querySelectorAll(item.selector).forEach(el => {
+        const elements = document.querySelectorAll(item.selector);
+
+        if (!elements.length) return;
+
+        elements.forEach(el => {
 
             el.addEventListener("mouseenter", () => {
                 setCursor(item.emoji);
