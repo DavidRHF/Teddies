@@ -736,7 +736,23 @@ footer a:hover{
     text-align:center;
 }
 
+/* ==========================================================
+   ABOUT PAGE
+========================================================== */
 
+.split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+@media (max-width:900px){
+    .split{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
 
 
 
