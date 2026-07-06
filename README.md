@@ -1,19 +1,63 @@
 # Teddies Restaurant Website
 
-*A fictional cozy restaurant website built with HTML, CSS, and JavaScript.*
+A production-ready, responsive restaurant website template designed for small businesses needing online presence and booking functionality.
 
-## Features
-- Responsive design
-- Interactive menu filtering
-- Gallery lightbox
-- Contact form (Netlify-ready)
-- Scroll animations
-- Mobile navigation
-
-## Tech Stack
-- HTML5
-- CSS3 (variables + grid + flexbox)
-- Vanilla JavaScript
+---
 
 ## Live Demo
-[Teddies](https://davidrhf.github.io/Teddies/menu.html)
+Add your Netlify link here
+
+---
+
+## Features
+
+- Fully responsive design (mobile-first)
+- Interactive menu filtering system
+- Gallery lightbox viewer
+- Netlify-powered reservation form
+- Success confirmation page with booking reference
+- Scroll-based animations (Intersection Observer)
+- Accessible navigation (ARIA support)
+- SEO-optimized structure
+
+---
+
+## Project Goals
+
+This project simulates a real-world restaurant website focused on:
+
+- Converting visitors into reservations
+- Showcasing menu items clearly
+- Building trust through brand storytelling
+- Providing a smooth UX across devices
+
+---
+
+## Tech Stack
+
+- HTML5
+- CSS3 (Flexbox + Grid + Variables)
+- Vanilla JavaScript (ES6+)
+- Netlify Forms
+
+---
+
+## Business Value
+
+- Increases online reservations
+- Reduces dependency on third-party booking apps
+- Improves local SEO presence
+- Provides a scalable template for multiple clients
+
+---
+
+## Deployment
+
+*Hosted using Netlify*
+[Teddies](https://teddiestestsite.netlify.app/)
+
+---
+
+## Author
+
+David Hazall-Farrell
