@@ -70,3 +70,37 @@ document.querySelectorAll(".btn").forEach(btn => {
         }, 150);
     });
 });
+
+/* ==========================================================
+   MENU FILTER SYSTEM
+========================================================== */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const menuItems = document.querySelectorAll(".menu-item");
+
+if (filterButtons.length > 0) {
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const filter = btn.getAttribute("data-filter");
+
+            // button active state
+            filterButtons.forEach(b => b.classList.remove("btn-primary"));
+            filterButtons.forEach(b => b.classList.add("btn-secondary"));
+            btn.classList.add("btn-primary");
+
+            // filter items
+            menuItems.forEach(item => {
+                const category = item.getAttribute("data-category");
+
+                if (filter === "all" || filter === category) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+        });
+    });
+}
