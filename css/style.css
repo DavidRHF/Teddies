@@ -882,8 +882,9 @@ body {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-body {
-    cursor: none;
+/* hide ALL default cursors globally */
+* {
+    cursor: none !important;
 }
 
 .custom-cursor {
