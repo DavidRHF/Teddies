@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reservation Received | Teddies Restaurant</title>
+    <title>Reservation Confirmed | Teddies Restaurant</title>
 
-    <meta name="description" content="Your reservation request has been received by Teddies Restaurant. We'll be in touch soon!">
+    <meta name="description" content="Your reservation has been successfully received by Teddies Restaurant.">
 
     <link rel="stylesheet" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         body{
+            margin:0;
+            font-family:'Nunito', sans-serif;
+            background:linear-gradient(135deg,#fff7ec,#ffffff);
             display:flex;
             justify-content:center;
             align-items:center;
             min-height:100vh;
             text-align:center;
-            background:linear-gradient(135deg,#fff7ec,#ffffff);
+            padding:20px;
         }
 
         .success-box{
-            max-width:600px;
-            padding:40px;
-            border-radius:20px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.1);
             background:white;
+            padding:50px 40px;
+            border-radius:20px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.12);
+            max-width:600px;
+            width:100%;
+            animation:fadeIn 0.8s ease;
         }
 
-        .success-emoji{
-            font-size:4rem;
-            margin-bottom:20px;
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(20px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        .checkmark{
+            width:90px;
+            height:90px;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0 auto 20px;
+            background:#8B5E3C;
+            color:white;
+            font-size:40px;
+            animation:pop 0.6s ease;
+        }
+
+        @keyframes pop{
+            0%{transform:scale(0);}
+            80%{transform:scale(1.2);}
+            100%{transform:scale(1);}
         }
 
         h1{
@@ -43,33 +68,94 @@
 
         p{
             color:#444;
-            margin-bottom:25px;
+            margin-bottom:15px;
+            line-height:1.5;
+        }
+
+        .ref{
+            background:#f7f3ee;
+            padding:10px 15px;
+            border-radius:10px;
+            display:inline-block;
+            margin:15px 0;
+            font-weight:600;
+            color:#5a3d2b;
+        }
+
+        .countdown{
+            font-size:14px;
+            color:#777;
+            margin-top:10px;
+        }
+
+        .btn-group{
+            margin-top:25px;
+            display:flex;
+            gap:10px;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+
+        .small{
+            font-size:13px;
+            color:#888;
         }
     </style>
-
 </head>
 
 <body>
 
 <div class="success-box">
 
-    <div class="success-emoji">🐻✅</div>
+    <div class="checkmark">✔</div>
 
-    <h1>Reservation Received!</h1>
+    <h1>Reservation Confirmed</h1>
 
     <p>
         Thank you for booking with <strong>Teddies Restaurant</strong>.<br>
-        Our team has received your request and will contact you shortly to confirm your table.
+        We’ve received your request and our team will confirm your table shortly.
     </p>
 
-    <p>
-        We can’t wait to welcome you to our cozy woodland lodge.
+    <!-- Fake but realistic booking reference -->
+    <div class="ref">
+        Booking Ref: TDY-
+        <span id="ref"></span>
+    </div>
+
+    <p class="small">
+        Please save your reference number for your visit.
     </p>
 
-    <a href="index.html" class="btn btn-primary">Return Home</a>
-    <a href="menu.html" class="btn btn-secondary">View Menu</a>
+    <div class="btn-group">
+        <a href="index.html" class="btn btn-primary">Return Home</a>
+        <a href="menu.html" class="btn btn-secondary">View Menu</a>
+    </div>
+
+    <p class="countdown">
+        Redirecting to homepage in <span id="timer">10</span> seconds...
+    </p>
 
 </div>
+
+<script>
+    // Generate fake booking reference
+    const ref = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("ref").textContent = ref;
+
+    // Countdown redirect
+    let time = 10;
+    const timer = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+        time--;
+        timer.textContent = time;
+
+        if (time <= 0) {
+            clearInterval(interval);
+            window.location.href = "index.html";
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
